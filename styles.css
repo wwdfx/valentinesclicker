@@ -1,0 +1,109 @@
+/* Import Pixelify Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Pixelify Sans', sans-serif;
+  background-color: #ffebee;
+  color: #d32f2f;
+  text-align: center;
+  overflow: hidden;
+}
+
+.app {
+  padding: 20px;
+  position: relative;
+  height: 100vh;
+}
+
+.heart-button {
+  font-size: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.heart-button:hover {
+  transform: scale(1.2);
+}
+
+.message-popup {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #d32f2f;
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+}
+
+.pixel-animation {
+  margin-top: 20px;
+}
+
+.pixel-heart {
+  font-size: 64px;
+  animation: pulse 1s infinite;
+}
+
+.pixel-text {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* Floating hearts */
+.floating-heart {
+  position: absolute;
+  font-size: 24px;
+  color: #d32f2f;
+  animation: floatHeart 2s ease-in-out forwards;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Floating Rat Animation */
+.floating-rat {
+  position: absolute;
+  animation: floatRat 8s linear forwards;
+  image-rendering: pixelated;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.floating-rat:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+@keyframes floatRat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+  }
+}
